@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- *
+ * A class for bookstore.
  *
  * @author Minh Ngoc Ngo
- * @author
+ * @author Thien Pham
  * @version 1.0
  */
 public class BookStore
@@ -121,8 +121,8 @@ public class BookStore
     private List<Novel> books;
     
     /**
-     *
-     * @param bookStoreName
+     * A constructor for BookStore.
+     * @param bookStoreName name of the book store.
      */
     public BookStore(final String bookStoreName)
     {
@@ -141,29 +141,45 @@ public class BookStore
         }
         
     }
-    
-    protected String getBookStoreName()
+
+    /**
+     * Accesstor for BookStoreName.
+     * @return name of the book store.
+     */
+    public String getBookStoreName()
     {
         return bookStoreName;
     }
-    
+
+    /**
+     * Mutator for BookStoreName.
+     * @param bookStoreName  bookStoreName.
+     */
     public void setBookStoreName(final String bookStoreName)
     {
         this.bookStoreName = bookStoreName;
     }
-    
-    protected List<Novel> getBooks()
+
+    /**
+     * Accesstor for books.
+     * @return books in list.
+     */
+    public List<Novel> getBooks()
     {
         return books;
     }
-    
+
+    /**
+     * Mutator for Books.
+     * @param books  books.
+     */
     public void setBooks(final List<Novel> books)
     {
         this.books = books;
     }
     
     /**
-     *
+     * A method to print all the titles in list.
      */
     public void printAllTitles()
     {
@@ -189,21 +205,15 @@ public class BookStore
         {
             for (final Novel novel : books)
             {
-                final String bookTitle;
-                bookTitle = novel.getTitle().toLowerCase();
-                
-                if (bookTitle.contains(title.toLowerCase() + " ") ||
-                    bookTitle.contains(" " + title.toLowerCase() + " "))
+                if (novel.getTitle().toLowerCase().contains(title.toLowerCase()))
                 {
-                    final String novelTitle;
-                    novelTitle = novel.getTitle();
-                    
-                    System.out.println(novelTitle);
+                    System.out.println(novel.getTitle());
                 }
             }
         }
     }
-    
+
+
     /**
      *
      */
@@ -434,6 +444,10 @@ public class BookStore
         System.out.println("\nBooks with titles 15 characters long:");
         fifteenCharTitles = bookstore.getBooksThisLength(15);
         fifteenCharTitles.forEach(novel -> System.out.println(novel.getTitle()));
+
+        System.out.println("\nBookshop part:");
+        new Bookshop(bookstore.getBooks());
+
     }
     
     
