@@ -3,24 +3,24 @@
  *
  * @author Minh Ngoc Ngo
  * @author Thien Pham
+ *
  * @version 1.0
  */
 public class Novel
 {
+    private static final int MIN_YEAR = 1;
+    private static final int MAX_YEAR = 2026;
+    
     private String title;
     private String authorName;
     private int yearPublished;
-
-    private static final int MIN_YEAR = 1;
-    private static final int MAX_YEAR = 2026;
-
-
+    
     /**
      * Validates and Initializes all Novel's instance variables.
      *
-     * @param title         String;
-     * @param authorName    String;
-     * @param yearPublished int;
+     * @param title             String; Novel's title
+     * @param authorName        String; Novel's author name
+     * @param yearPublished     int; Novel's published year
      */
     public Novel(final String title,
                  final String authorName,
@@ -36,17 +36,19 @@ public class Novel
     }
 
     /**
-     * Accesstor for title.
-     * @return the title.
+     * Accessor for title.
+     *
+     * @return  String; the title
      */
-    public String getTitle()
+    protected String getTitle()
     {
         return title;
     }
 
     /**
      * Mutator for title.
-     * @param title  title.
+     *
+     * @param title  String; new title
      */
     public void setTitle(final String title)
     {
@@ -54,17 +56,19 @@ public class Novel
     }
 
     /**
-     * Accesstor for the author's name.
-     * @return the author name.
+     * Accessor for the author's name.
+     *
+     * @return  String; the author name
      */
-    public String getAuthorName()
+    protected String getAuthorName()
     {
         return authorName;
     }
 
     /**
-     * Setter for the author name.
-     * @param authorName  authorName.
+     * Mutator for the author name.
+     *
+     * @param authorName  String; new authorName
      */
     public void setAuthorName(String authorName)
     {
@@ -72,17 +76,19 @@ public class Novel
     }
 
     /**
-     * Accesstor for year published.
-     * @return the year published.
+     * Accessor for year published.
+     *
+     * @return  int; the year published
      */
-    public int getYearPublished()
+    protected int getYearPublished()
     {
         return yearPublished;
     }
 
     /**
-     * Mutators for year published.
-     * @param yearPublished  yearPublished.
+     * Mutator for year published.
+     *
+     * @param yearPublished int; new yearPublished
      */
     public void setYearPublished(final int yearPublished)
     {
@@ -90,9 +96,10 @@ public class Novel
     }
 
 
-    /*
+    /**
      * A method to validate title.
-     * @param title title to be validate.
+     *
+     * @param title  String; title to be validated
      */
     private static void validateTitle(final String title)
     {
@@ -103,9 +110,10 @@ public class Novel
         }
     }
 
-    /*
+    /**
      * A method to validate author name.
-     * @param authorName the name to be validate.
+     *
+     * @param authorName  String; the name to be validated.
      */
     private static void validateAuthorName(final String authorName)
     {
@@ -116,9 +124,10 @@ public class Novel
         }
     }
 
-    /*
+    /**
      * A method to validate the year published.
-     * @param yearPublished the year to be validate.
+     *
+     * @param yearPublished  int; the year to be validated.
      */
     private static void validateYearPublished(final int yearPublished)
     {
@@ -134,8 +143,9 @@ public class Novel
     }
 
     /**
-     * A toString method to return the title, author name and year pushblished in correct format.
-     * @return the string.
+     * A toString method to return the title, author name and year published in correct format.
+     *
+     * @return  String; Novel's instance variables.
      */
     @Override
     public String toString()

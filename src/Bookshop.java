@@ -11,6 +11,7 @@ import java.util.Collections;
  *
  *  @author Minh Ngoc Ngo
  *  @author Thien Pham
+ *
  *  @version 1.0
  */
 public class Bookshop
@@ -19,7 +20,8 @@ public class Bookshop
 
     /**
      * A constructor for Bookshop.
-     * @param novels  novels.
+     *
+     * @param novels  List<Novel>; list of novels.
      */
     public Bookshop(final List<Novel> novels)
     {
@@ -64,7 +66,7 @@ public class Bookshop
 
         Collections.sort(keyList);
 
-        System.out.println("\nSorted novels with no the:");
+        System.out.println("\nSorted novels with no 'the':");
         for (String key : keyList)
         {
             System.out.println(map.get(key));
